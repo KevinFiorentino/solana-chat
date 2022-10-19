@@ -3,7 +3,6 @@ import { Program } from '@project-serum/anchor';
 import { SolanaChat } from '../target/types/solana_chat';
 import { TextEncoder } from 'util';
 import { expect } from "chai";
-import * as assert from 'assert';
 
 const { PublicKey, SystemProgram } = anchor.web3;
 
@@ -46,9 +45,10 @@ describe('solana-chat', () => {
   
   it('Get all messages', async () => {
     const messages = await program.account.message.all();
-    assert.equal(1, messages.length);
+    expect(messages.length).equal(1);
   });
 
+  
   it("Finds messages by owner", async () => {
     const msgByOwner = await program.account.message.all([
       {
@@ -58,7 +58,7 @@ describe('solana-chat', () => {
         },
       },
     ]);
-    assert.equal(1, msgByOwner.length);
+    expect(msgByOwner.length).equal(1);
   });
 
 });

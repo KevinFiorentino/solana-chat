@@ -5,11 +5,15 @@ skip-lint = false
 [programs.localnet]
 solana_chat = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
 
+[programs.devnet]
+solana_chat = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+# cluster = "localnet"
+cluster = "devnet"
 wallet = "/home/kevin/.config/solana/id.json"
 
 [scripts]
