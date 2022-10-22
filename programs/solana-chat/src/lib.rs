@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+declare_id!("ABb1xsKmAprpQr2yqkfsMXXt9ZnMdLENwTLZVDMVmfhy");
 
 #[program]
 pub mod solana_chat {
@@ -32,7 +32,6 @@ pub struct CreateMessage<'info> {
             b"create_message",
             user.key().as_ref(),
             text.as_bytes(),
-            get_date().to_string().as_bytes()    // I'm not sure how generate a random seed with the date
         ],
         bump, */
         space = 8  +                             // Discriminator Anchor

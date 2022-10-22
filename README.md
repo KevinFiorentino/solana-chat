@@ -15,4 +15,4 @@
 
 ### Unit Test
 
-- `cargo test`
+- `anchor test`

@@ -2,11 +2,11 @@
 seeds = false
 skip-lint = false
 
-[programs.localnet]
-solana_chat = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+# [programs.localnet]
+# solana_chat = "ABb1xsKmAprpQr2yqkfsMXXt9ZnMdLENwTLZVDMVmfhy"
 
 [programs.devnet]
-solana_chat = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+solana_chat = "ABb1xsKmAprpQr2yqkfsMXXt9ZnMdLENwTLZVDMVmfhy"
 
 [registry]
 url = "https://api.apr.dev"
