@@ -1,19 +1,16 @@
 import * as anchor from '@project-serum/anchor';
 import { Program } from '@project-serum/anchor';
 import { SolanaChat } from '../target/types/solana_chat';
-import { TextEncoder } from 'util';
 import { expect } from "chai";
 
 const { PublicKey, SystemProgram, Keypair, Connection, clusterApiUrl } = anchor.web3;
 
 describe('solana-chat', () => {
 
-  anchor.setProvider(anchor.AnchorProvider.env());
-
-  const program = anchor.workspace.SolanaChat as Program<SolanaChat>;
-
   const provider = anchor.AnchorProvider.env();
   anchor.setProvider(provider);
+
+  const program = anchor.workspace.SolanaChat as Program<SolanaChat>;
 
   it('Create message', async () => {
 
