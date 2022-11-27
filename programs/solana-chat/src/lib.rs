@@ -33,6 +33,14 @@ pub mod solana_chat {
 
         Ok(())
     }
+
+    pub fn delete_message(
+        ctx: Context<DeleteMessage>,
+        text: String                    // It is necessary to pass any text to get a context.
+    ) -> Result<()> {
+        Ok(())
+    }
+
 }
 
 
@@ -40,7 +48,6 @@ pub mod solana_chat {
 #[derive(Accounts)]
 #[instruction(text: String)]
 pub struct CreateMessage<'info> {
-
     #[account(
         init,
         payer = user,
@@ -60,7 +67,6 @@ pub struct CreateMessage<'info> {
 #[derive(Accounts)]
 #[instruction(text: String)]
 pub struct UpdateMessage<'info> {
-
     #[account(
         mut,
         realloc = 8  +
@@ -69,6 +75,21 @@ pub struct UpdateMessage<'info> {
                   8,
         realloc::payer = user,
         realloc::zero = true
+    )]
+    pub message: Account<'info, Message>,
+
+    #[account(mut)]
+    pub user: Signer<'info>,
+
+    pub system_program: Program<'info, System>,
+}
+
+#[derive(Accounts)]
+#[instruction(text: String)]
+pub struct DeleteMessage<'info> {
+    #[account(
+        mut,
+        close = user
     )]
     pub message: Account<'info, Message>,
 

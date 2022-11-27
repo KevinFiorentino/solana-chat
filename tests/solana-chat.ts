@@ -33,7 +33,7 @@ describe('solana-chat', () => {
 
   it('Get message', async () => {
     const messages = await program.account.message.all();
-    expect(messages.length).equal(1);
+    expect(1).equal(messages.length);
     expect(text === messages[0].account.text);
   });
 
@@ -51,10 +51,29 @@ describe('solana-chat', () => {
   });
 
 
-  it('Get message updated ', async () => {
+  it('Get message updated', async () => {
     const messages = await program.account.message.all();
-    expect(messages.length).equal(1);
+    expect(1).equal(messages.length);
     expect(textUpdate === messages[0].account.text);
+  });
+
+
+  it('Delete message', async () => {
+    const txId = await program.methods
+      .deleteMessage('It is necessary to pass any text to get a context.')
+      .accounts({
+        message: msg.publicKey,
+        user: provider.wallet.publicKey,
+        systemProgram: SystemProgram.programId,
+      })
+      .rpc();
+    expect(txId).to.be.a('string');
+  });
+
+
+  it('Get zero messages', async () => {
+    const messages = await program.account.message.all();
+    expect(0).equal(messages.length);
   });
 
 });
