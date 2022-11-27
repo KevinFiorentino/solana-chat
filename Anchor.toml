@@ -2,9 +2,6 @@
 seeds = false
 skip-lint = false
 
-# [programs.localnet]
-# solana_chat = "HVGvQSXwVwRZqYHoBEHCfVC1HNhgE7BDa2w5vmUmrXQL"
-
 [programs.devnet]
 solana_chat = "HVGvQSXwVwRZqYHoBEHCfVC1HNhgE7BDa2w5vmUmrXQL"
 
@@ -12,7 +9,6 @@ solana_chat = "HVGvQSXwVwRZqYHoBEHCfVC1HNhgE7BDa2w5vmUmrXQL"
 url = "https://api.apr.dev"
 
 [provider]
-# cluster = "localnet"
 cluster = "devnet"
 wallet = "/home/kevin/.config/solana/id.json"
 

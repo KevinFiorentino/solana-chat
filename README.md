@@ -2,8 +2,7 @@
 
 ### Test
 
-- Set `Anchor.toml` -> `cluster = "localnet"`
-- `anchor test`
+- `anchor test --provider.cluster localnet`
 
 ### Fund wallet
 
