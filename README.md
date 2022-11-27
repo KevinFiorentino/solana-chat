@@ -1,25 +1,20 @@
 # Solana Program
 
-### Solana CLI
-
-- `solana config get`
-- `solana config set --url devnet`
-- `solana airdrop 1`
-- `solana balance`
-
-
-### Anchor CLI
-
-https://docs.solana.com/cli/deploy-a-program
-
-- `anchor build`
-- `anchor deploy` or `solana program deploy target/deploy/solana_chat.so`
-- Reemplazar el `<PROGRAM-ID>` en el contrato y en `Anchor.toml`
-- `anchor build`
-- `anchor deploy` or `solana program deploy --program-id target/deploy/solana_chat-keypair.json target/deploy/solana_chat.so`
-
-
-### Unit Test
+### Test
 
 - Set `Anchor.toml` -> `cluster = "localnet"`
 - `anchor test`
+
+### Fund wallet
+
+- `solana config set --url devnet`
+- `solana airdrop 2` x2
+- `solana balance`
+
+### Deploy program
+
+- `anchor build`
+- `solana address -k target/deploy/xxxxx-keypair.json`
+- Replace Program ID in `lib.rs` and `Anchor.toml`
+- `anchor build` (again)
+- `anchor deploy`
