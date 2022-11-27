@@ -4,7 +4,9 @@ declare_id!("7PTHeLBQNpZTr72sTWHcL1ZLpcrhcnLf2rSqmEN2pGWG");
 
 #[program]
 pub mod solana_chat {
+
     use super::*;
+
     pub fn create_message(
         ctx: Context<CreateMessage>,
         text: String
@@ -19,7 +21,21 @@ pub mod solana_chat {
 
         Ok(())
     }
+
+    pub fn update_message(
+        ctx: Context<UpdateMessage>,
+        text: String
+    ) -> Result<()> {
+
+        let message = &mut ctx.accounts.message;
+
+        message.text = text;
+
+        Ok(())
+    }
 }
+
+
 
 #[derive(Accounts)]
 #[instruction(text: String)]
@@ -28,16 +44,31 @@ pub struct CreateMessage<'info> {
     #[account(
         init,
         payer = user,
-        /* seeds = [
-            b"create_message",
-            user.key().as_ref(),
-            text.as_bytes(),
-        ],
-        bump, */
         space = 8  +                             // Discriminator Anchor
                 32 +                             // Owner
                 text.as_bytes().len() + 4 +      // Text + 4    (String prefix)
                 8                                // Timestamp
+    )]
+    pub message: Account<'info, Message>,
+
+    #[account(mut)]
+    pub user: Signer<'info>,
+
+    pub system_program: Program<'info, System>,
+}
+
+#[derive(Accounts)]
+#[instruction(text: String)]
+pub struct UpdateMessage<'info> {
+
+    #[account(
+        mut,
+        realloc = 8  +
+                  32 +
+                  text.as_bytes().len() + 4 +
+                  8,
+        realloc::payer = user,
+        realloc::zero = true
     )]
     pub message: Account<'info, Message>,
 

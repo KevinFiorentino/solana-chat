@@ -3,7 +3,7 @@
 ### Solana CLI
 
 - `solana config get`
-- `solana config set --url https://api.devnet.solana.com`
+- `solana config set --url devnet`
 - `solana airdrop 1`
 - `solana balance`
 
@@ -21,4 +21,5 @@ https://docs.solana.com/cli/deploy-a-program
 
 ### Unit Test
 
+- Set `Anchor.toml` -> `cluster = "localnet"`
 - `anchor test`
