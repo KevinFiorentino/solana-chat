@@ -18,3 +18,7 @@
 - Replace Program ID in `lib.rs` and `Anchor.toml`
 - `anchor build` (again)
 - `anchor deploy`
+
+### Upgrade program
+
+- https://stackoverflow.com/questions/68819053/how-to-upgrade-a-program-id-on-anchor
