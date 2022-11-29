@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("HVGvQSXwVwRZqYHoBEHCfVC1HNhgE7BDa2w5vmUmrXQL");
+declare_id!("AH5pQMYm4HzbMfw6CTbWS1rVFHgGpKKz53qQPH7a7pZ3");
 
 #[program]
 pub mod solana_chat {
@@ -42,7 +42,6 @@ pub mod solana_chat {
     }
 
 }
-
 
 
 #[derive(Accounts)]

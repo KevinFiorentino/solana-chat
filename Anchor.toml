@@ -3,7 +3,7 @@ seeds = false
 skip-lint = false
 
 [programs.devnet]
-solana_chat = "HVGvQSXwVwRZqYHoBEHCfVC1HNhgE7BDa2w5vmUmrXQL"
+solana_chat = "AH5pQMYm4HzbMfw6CTbWS1rVFHgGpKKz53qQPH7a7pZ3"
 
 [registry]
 url = "https://api.apr.dev"

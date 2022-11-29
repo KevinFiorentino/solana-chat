@@ -13,7 +13,7 @@
 ### Deploy program
 
 - `anchor build`
-- `solana address -k target/deploy/xxxxx-keypair.json`
+- `solana address -k target/deploy/solana_chat-keypair.json`
 - Replace Program ID in `lib.rs` and `Anchor.toml`
 - `anchor build` (again)
 - `anchor deploy`
@@ -21,3 +21,4 @@
 ### Upgrade program
 
 - https://stackoverflow.com/questions/68819053/how-to-upgrade-a-program-id-on-anchor
+- `anchor upgrade target/deploy/solana_chat.so --provider.cluster devnet --program-id AH5pQMYm4HzbMfw6CTbWS1rVFHgGpKKz53qQPH7a7pZ3`
