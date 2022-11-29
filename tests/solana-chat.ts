@@ -44,6 +44,7 @@ describe('solana-chat', () => {
       .accounts({
         message: msg.publicKey,
         user: provider.wallet.publicKey,
+        systemProgram: SystemProgram.programId,
       })
       .rpc();
     expect(txId).to.be.a('string');

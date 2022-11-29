@@ -92,8 +92,6 @@ pub struct DeleteMessage<'info> {
 
     #[account(mut)]
     pub user: Signer<'info>,
-
-    pub system_program: Program<'info, System>,
 }
 
 #[account]
