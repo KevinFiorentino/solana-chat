@@ -36,7 +36,6 @@ pub mod solana_chat {
 
     pub fn delete_message(
         ctx: Context<DeleteMessage>,
-        text: String                    // It is necessary to pass any text to get a context.
     ) -> Result<()> {
         Ok(())
     }
@@ -84,7 +83,6 @@ pub struct UpdateMessage<'info> {
 }
 
 #[derive(Accounts)]
-#[instruction(text: String)]
 pub struct DeleteMessage<'info> {
     #[account(
         mut,

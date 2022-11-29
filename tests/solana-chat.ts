@@ -59,7 +59,7 @@ describe('solana-chat', () => {
 
   it('Delete message', async () => {
     const txId = await program.methods
-      .deleteMessage('It is necessary to pass any text to get a context.')
+      .deleteMessage()
       .accounts({
         message: msg.publicKey,
         user: provider.wallet.publicKey,
