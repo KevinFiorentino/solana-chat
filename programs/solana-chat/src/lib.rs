@@ -72,7 +72,7 @@ pub struct UpdateMessage<'info> {
                   text.as_bytes().len() + 4 +
                   8,
         realloc::payer = user,
-        realloc::zero = true
+        realloc::zero = true                // The account will be updated multiple times either shrinking or expanding the space allocated
     )]
     pub message: Account<'info, Message>,
 
@@ -83,10 +83,10 @@ pub struct UpdateMessage<'info> {
 }
 
 #[derive(Accounts)]
-pub struct DeleteMessage<'info> {
+pub struct DeleteMessage<'info> {       
     #[account(
         mut,
-        close = user
+        close = user                        // TODO: Validate owner account (has_one)
     )]
     pub message: Account<'info, Message>,
 
