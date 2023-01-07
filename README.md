@@ -1,9 +1,5 @@
 # Solana Program
 
-### Test
-
-- `anchor test --provider.cluster localnet`
-
 ### Fund wallet
 
 - `solana config set --url devnet`
@@ -17,6 +13,10 @@
 - Replace Program ID in `lib.rs` and `Anchor.toml`
 - `anchor build` (again)
 - `anchor deploy`
+
+### Test
+
+- `anchor test --provider.cluster localnet`
 
 ### Upgrade program
 
